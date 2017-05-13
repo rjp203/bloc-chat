@@ -1,8 +1,9 @@
 (function() {
-  function ChatMainCtrl() {
+  function ChatMainCtrl(Room, $scope) {
+    $scope.rooms = Room.all;
   }
 
   angular
     .module('blocChat')
-    .controller('ChatMainCtrl', [ChatMainCtrl]);
+    .controller('ChatMainCtrl', ['Room', "$scope", ChatMainCtrl]);
 })();
