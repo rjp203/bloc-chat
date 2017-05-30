@@ -5,7 +5,21 @@
 
 <section>
   <br>
-    <div class="room-list" ng-repeat="room in rooms">
-      <a class="rooms">{{ room.$value }}</a>
+  <div class="room-list" ng-repeat="room in rooms" ng-click='activeRoom(room)'>
+     {{ room.$value }}
     </div>
+</section>
+
+<section>
+  <div class="right-column">
+    <section class="room-title">
+      <h3 ng-hide="currentRoomTitle"> Chat Rooms </h3>
+      <h3 ng-show="currentRoomTitle">{{ currentRoomTitle | uppercase }}</h3>
+    </section>
+    <div ng-repeat="message in currentRoomMessages">
+        {{message.username}}: <b>{{message.content}}</b>
+          <br>
+          ({{message.sentAt}})
+    </div>
+  </div>
 </section>

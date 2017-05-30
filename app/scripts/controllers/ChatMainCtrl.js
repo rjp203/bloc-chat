@@ -1,5 +1,5 @@
 (function() {
-  function ChatMainCtrl($uibModal, Room, $scope) {
+  function ChatMainCtrl($uibModal, Room, Message, $scope) {
     $scope.rooms = Room.all;
 
     $scope.open = function() {
@@ -12,13 +12,21 @@
         size: 'md'
       });
       modalInstance.result.then(function(name){
-        console.log(name);
         $scope.rooms.$add(name);
       })
+    }
+    $scope.activeRoom = function(room) {
+
+      Message.setRoom(room.$id);
+
+      $scope.currentRoomTitle = room.$value;
+
+      $scope.currentRoomMessages = Message.getByRoomId(room.$id);
+
     }
   }
 
   angular
     .module('blocChat')
-    .controller('ChatMainCtrl', ['$uibModal', 'Room', '$scope', ChatMainCtrl])
+    .controller('ChatMainCtrl', ['$uibModal', 'Room', 'Message', '$scope', ChatMainCtrl])
 })();
