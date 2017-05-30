@@ -1,0 +1,13 @@
+<section>
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Set Your Username</h3>
+  </div>
+
+  <form name="usernameForm">
+    <input type="text" name="input" ng-model="username" ng-required="true" />
+
+    <div class="modal-footer">
+      <button class="btn btn-primary" type="button" ng-click="usernameForm.$valid && submit()">OK</button>
+    </div>
+  </form>
+</section>

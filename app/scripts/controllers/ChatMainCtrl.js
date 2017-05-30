@@ -28,5 +28,5 @@
 
   angular
     .module('blocChat')
-    .controller('ChatMainCtrl', ['$uibModal', 'Room', 'Message', '$scope', ChatMainCtrl])
+    .controller('ChatMainCtrl', ['$uibModal', 'Room', 'Message', '$scope', ChatMainCtrl]);
 })();
