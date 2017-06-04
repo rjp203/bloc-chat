@@ -1,3 +1,10 @@
 body {
   background-color: lightsteelblue;
 }
+
+.right-column {
+  float: center;
+  width: 120px;
+  margin-left: 340px;
+  padding: 1rem;
+}

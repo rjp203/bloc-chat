@@ -1,0 +1,10 @@
+<section class="message-form" ng-controller="ChatSendMessageCtrl as messagectrl">
+  <div>
+    <div class="text-input"> What's the Deal?
+      <input type="text" name="input" ng-model="messagectrl.message" />
+    </div>
+    <div class="submit-text">
+      <button class="button" ng-click="messagectrl.submit()">Send</button>
+    </div>
+  </div>
+</section>

@@ -19,7 +19,11 @@
     <div ng-repeat="message in currentRoomMessages">
         {{message.username}}: <b>{{message.content}}</b>
           <br>
-          ({{message.sentAt}})
+          ({{message.sentAt | date:'hh:mm MM-dd-yyyy'}})
+    </div>
+      <br>
+    <div>
+      <ng-include src="'/templates/chatsendmessage.html'"></ng-include>
     </div>
   </div>
 </section>
